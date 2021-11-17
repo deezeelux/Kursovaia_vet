@@ -1,0 +1,60 @@
+﻿@if(null != TempData["alert"]) {
+<script type="text/javascript">
+    alert('@TempData["alert"]');
+</script>
+}
+<section class="section">
+    <div class="container">
+        <ul class="admin__reg">
+            <li class="admin__reg-window">
+                <div class="admin__reg-header"> For employees</div>
+                <form method="post">
+                    <ul class="admin__login">
+                        <li class="admin__login-info">
+                            <div class="admin__login-text">Login</div>
+                            <input type="text" name="login" class="admin__reg-input">
+                        </li>
+                        <li class="admin__login-info">
+                            <div class="admin__login-text">Password</div>
+                            <input type="text" name="pass" class="admin__reg-input">
+                        </li>
+                    </ul>
+                    <button class="btn">Log in</button>
+                </form>
+            </li>
+            <li class="admin__reg-window pet__lapka">
+                <img alt="pet" src="..//images/pet2.png">
+            </li>
+            <li class="admin__reg-window">
+                <div class="admin__reg-header">Animal registration</div>
+                @using (Html.BeginForm("AddPet", "Home", FormMethod.Post))
+                {
+                    <ul class="pet__login">
+                        <li class="pet__login-info">
+                            <div class="pet__login-text">Name</div>
+                            <input type="text" name="name" value="" class="admin__reg-input">
+                        </li>
+                        <li class="pet__login-info">
+                            <div class="pet__login-text">Age</div>
+                            <input type="text" name="age" value="" class="admin__reg-input">
+                        </li>
+                        <li class="pet__login-info">
+                            <div class="pet__login-text">Breed</div>
+                            <input type="text" name="breed" value="" class="admin__reg-input">
+                        </li>
+                        <li class="pet__login-info">
+                            <div class="pet__login-text">Owner's name</div>
+                            <input type="text" name="ownersname" value="" class="admin__reg-input">
+                        </li>
+                        <li class="pet__login-info">
+                            <div class="pet__login-text">Diagnosis</div>
+                            <input type="text" name="diagnosis" value="" class="admin__reg-input">
+                        </li>
+                    </ul>
+                    <button class="btn">Register</button>
+                }
+
+                </li>
+        </ul>
+    </div>
+</section>
